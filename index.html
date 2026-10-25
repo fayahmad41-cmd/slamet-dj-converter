@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0714">
+  <title>Slamet DJ Converter — Slamet Project</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">S</span><span><strong>SLAMET PROJECT</strong><small>SLAMET DJ CONVERTER</small></span></a>
+    <span class="status"><i></i> AUDIO STUDIO</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span>✦</span> ROBLOX AUDIO TOOLKIT</div>
+      <h1>SLAMET <span>DJ CONVERTER</span></h1>
+      <p class="lead">Siapkan audio untuk pengalaman DJ-mu. Upload, dengarkan, atur pitch, dan unduh hasilnya dalam satu tempat.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="section-head"><div><span class="step">01</span><h2>Upload audio</h2></div><span class="muted">MP3 · WAV · OGG · FLAC</span></div>
+      <label class="dropzone" id="dropzone" for="audioFile">
+        <input id="audioFile" type="file" accept="audio/*,.mp3,.wav,.ogg,.flac,.aac,.m4a,.webm">
+        <span class="upload-icon">↑</span>
+        <strong id="dropTitle">Tarik file ke sini atau <em>pilih file</em></strong>
+        <small id="dropSubtitle">Maksimal 200 MB · File diproses di prototipe ini</small>
+      </label>
+      <div class="file-row hidden" id="fileRow">
+        <div class="file-symbol">♫</div><div class="file-info"><strong id="fileName">audio.mp3</strong><small id="fileMeta">0 MB</small></div>
+        <button class="icon-button" id="removeFile" aria-label="Hapus file">×</button>
+      </div>
+
+      <div class="section-head settings-head"><div><span class="step">02</span><h2>Pengaturan audio</h2></div><span class="muted">LIVE PREVIEW</span></div>
+      <div class="control-card">
+        <div class="control-label"><div><strong>Pitch / Nada</strong><small>Atur tinggi atau rendahnya nada preview</small></div><output id="pitchOutput">0 semitone</output></div>
+        <input id="pitch" type="range" min="-12" max="12" value="0" step="1">
+        <div class="range-labels"><span>-12</span><span>Normal</span><span>+12</span></div>
+        <div class="control-label speed-label"><div><strong>Playback speed</strong><small>Kecepatan preview dan hasil ekspor belum diproses server</small></div><output id="speedOutput">1.00×</output></div>
+        <input id="speed" type="range" min="0.5" max="1.5" value="1" step="0.01">
+        <div class="range-labels"><span>0.50×</span><span>Normal</span><span>1.50×</span></div>
+        <p class="hint">Catatan: kontrol ini mengubah preview browser. Pitch shifting berkualitas tinggi dan ekspor file hasil konversi perlu ditambahkan pada tahap backend berikutnya.</p>
+      </div>
+
+      <div class="section-head settings-head"><div><span class="step">03</span><h2>Preview & hasil</h2></div></div>
+      <div class="player-card">
+        <div class="disc">♫</div><div class="player-main"><strong id="playerTitle">Belum ada audio dipilih</strong><small id="playerSubtitle">Pilih file audio untuk mulai</small><audio id="audioPlayer" controls></audio></div>
+      </div>
+      <div class="actions"><button class="btn btn-primary" id="processBtn" disabled>✦ Proses file</button><a class="btn btn-secondary disabled" id="downloadBtn" href="#" download>↓ Download audio asli</a></div>
+      <div class="notice hidden" id="notice" role="status"></div>
+
+      <div class="section-head settings-head"><div><span class="step">04</span><h2>Roblox integration</h2></div><span class="badge">TAHAP BERIKUTNYA</span></div>
+      <div class="roblox-card"><div class="roblox-mark">R</div><div><strong>Roblox Open Cloud</strong><p>Upload langsung ke Roblox akan ditambahkan setelah backend, API key aman, dan alur izin aset disiapkan. Jangan masukkan API key Roblox di halaman publik ini.</p><a href="https://create.roblox.com/docs/cloud" target="_blank" rel="noreferrer">Baca dokumentasi resmi ↗</a></div></div>
+    </section>
+    <footer><span>© SLAMET PROJECT</span><span>MADE FOR YOUR DJ WORKFLOW</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
